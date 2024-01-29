@@ -1,0 +1,49 @@
+#eventBoxes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  width: 100vw;
+
+  padding-top: 20vh;
+}
+
+#eventBox {
+  border: solid black 1px;
+
+  padding: 2%;
+}
+
+#eventBoxContainer {
+  width: 100vw;
+  display: flex;
+  justify-content: space-around;
+}
+
+#eventBox h2 {
+  font-size: medium;
+}
+
+#eventBox h3 {
+  font-size: medium;
+}
+
+#formToAddEvents {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  flex-direction: column;
+}
+
+#formToAddEvents form {
+  display: flex;
+  flex-direction: column;
+}
+
+#idfk {
+  display: flex;
+  flex-direction:column;
+  justify-content:space-between;
+}

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>EcoVentures | Home</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    
+  
+    <link href="{{ url_for('static', filename='img/favicon.ico') }}" rel="icon">
+
+<!-- STYLESHEETS -->
+  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">  
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <link href="{{ url_for('static', filename='lib/animate/animate.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='lib/owlcarousel/assets/owl.carousel.min.css') }}" rel="stylesheet">
+
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container-xxl bg-white p-0">
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+
+
+        <div class="container-xxl position-relative p-0">
+            <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+                <a href="{{ url_for('home', context=context) }}" class="navbar-brand p-0">
+                    
+                    <h1 class="m-0"><img class="img-fluid animated zoomIn"  src="{{ url_for('static', filename='img/justlogo.png') }}" alt=""> EcoVentures</h1>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="fa fa-bars"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto py-0">
+                        <a href="{{ url_for('home', context=context) }}" class="nav-item nav-link active">Home</a>
+                        <a href="
+                          {{ url_for('dashboard', context=context) }}" class="nav-item nav-link">Dashboard</a>
+                        <a href="{{ url_for('events', context=context) }}" class="nav-item nav-link">Events</a>
+                      <a href="{{ url_for('challenges', context=context) }}" class="nav-item nav-link">Challenges</a>
+                      <a href="{{ url_for('tracker', context=context) }}" class="nav-item nav-link">Plastic Pickup</a>
+
+                    </div>
+
+                    <a href="{{ url_for('signin', context=context) }}" class="btn btn-secondary py-2 px-4 ms-3">Sign In</a>
+                </div>
+            </nav>
+
+            <div class="container-xxl py-5 bg-primary hero-header mb-5">
+                <div class="container my-5 py-5 px-lg-5">
+                    <div class="row g-5">
+                        <div class="col-lg-6 pt-5 text-center text-lg-start">
+                            <h1 class="display-4 text-white mb-4 animated slideInLeft">Welcome to EcoVenture
+                            </h1>
+                            <h4 class="text-white animated slideInLeft">Make the world greener one challenge at a time!</h4>
+                            <h1 class="text-white mb-4 animated slideInLeft">
+                            </h1>
+                            <a href="{{ url_for('dashboard', context=context) }}" class="btn btn-secondary py-sm-3 px-sm-5 me-3 animated slideInLeft">Dashboard</a>
+                        </div>
+                        <div class="col-lg-6 text-center text-lg-start">
+                            <img class="img-fluid animated zoomIn"  src="{{ url_for('static', filename='img/earth.jpg') }}" alt="">
+                            <img class="img-fluid animated zoomIn mt-3"  src="{{ url_for('static', filename='img/plastic pickup.jpg') }}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="modal fade" id="searchModal" tabindex="-1">
+            <div class="modal-dialog modal-fullscreen">
+                <div class="modal-content" style="background: rgba(29, 40, 51, 0.8);">
+                    <div class="modal-header border-0">
+                        <button type="button" class="btn bg-white btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body d-flex align-items-center justify-content-center">
+                        <div class="input-group" style="max-width: 600px;">
+                            <input type="text" class="form-control bg-transparent border-light p-3" placeholder="Type search keyword">
+                            <button class="btn btn-light px-4"><i class="bi bi-search"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-xxl py-5">
+            <div class="container px-lg-5">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-7 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="section-title position-relative mb-4 pb-4">
+                            <h1 class="mb-2">Starting your first Eco-venture with Plastic</h1>
+                        </div>
+                        <h3 class="mb-4">Plastic waste poses a significant threat to our environment, ecosystems, and human health. It not only litters our landscapes and waterways but also endangers marine life and disrupts entire ecosystems. Plastic pollution persists for hundreds of years, releasing harmful chemicals and microplastics that contaminate soil and water sources. By picking up plastic in our communities, we mitigate this environmental crisis by preventing further pollution, safeguarding wildlife, and preserving natural habitats. Taking action at the local level not only beautifies our neighborhoods but also contributes to global efforts to combat plastic pollution and protect our planet for future generations.
+
+
+
+
+
+
+
+
+                        </h3>
+                        <div class="row g-3">
+                            <div class="col-sm-4 wow fadeIn" data-wow-delay="0.1s">
+                                <div class="bg-light rounded text-center p-4">
+                                    <i class="fa fa-trash fa-2x text-primary mb-2"></i>
+                                    <h2 class="mb-1"><span data-toggle="counter-up">50</span>%</h2>
+                                    <p class="mb-0">of plastic is thrown away after the first use</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 wow fadeIn" data-wow-delay="0.3s">
+                                <div class="bg-light rounded text-center p-4">
+                                    <i class="fa fa-dumpster-fire fa-2x text-primary mb-2"></i>
+                                    <h2 class="mb-1"><span data-toggle="counter-up">400</span>M</h2>
+                                    <p class="mb-0">TONNES of plastic is wasted each year</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 wow fadeIn" data-wow-delay="0.5s">
+                                <div class="bg-light rounded text-center p-4">
+                                    <i class="fa fa-recycle fa-2x text-primary mb-2"></i>
+                                    <h2 class="mb-1"><span data-toggle="counter-up">10</span>%</h2>
+                                    <p class="mb-0">of plastic is recycled</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="col-lg-5">
+                        <img class="img-fluid wow zoomIn" data-wow-delay="0.5s" src="{{ url_for('static', filename='img/plastic.jpg') }}">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+      <!-- SOURCESSS -->
+        <!-- <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="container px-lg-5">
+                <div class="section-title position-relative mb-4 pb-4">
+                    <h1 class="mb-2">Sources</h1>
+                </div>
+                <div class="owl-carousel testimonial-carousel">
+                    <div class="testimonial-item position-relative bg-light border-top border-5 border-primary rounded p-4 my-4">
+                        <div class="d-flex align-items-center justify-content-center position-absolute top-0 start-0 ms-5 translate-middle bg-primary rounded-circle" style="width: 45px; height: 45px; margin-top: -3px;">
+                            <i class="fa fa-quote-left text-white"></i>
+                        </div>
+                        <p class="mt-3">Tons of food is wasted everyday. In our local community, we feed our pigs the excess food but big corporations have no such thing and waste a lot of food</p>
+                        <div class="d-flex align-items-center">
+                            <div class="ps-3">
+                                <h6 class="fw-bold mb-1">Farmers Market</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-item position-relative bg-light border-top border-5 border-primary rounded p-4 my-4">
+                        <div class="d-flex align-items-center justify-content-center position-absolute top-0 start-0 ms-5 translate-middle bg-primary rounded-circle" style="width: 45px; height: 45px; margin-top: -3px;">
+                            <i class="fa fa-quote-left text-white"></i>
+                        </div>
+                        <p class="mt-3">1/3 of ALL FOOD is WASTED (1.3 BILLION Tons) globally per year</p>
+                        <div class="d-flex align-items-center">
+                            <div class="ps-3">
+                                <h6 class="fw-bold mb-1">thebarbecuelab.com</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-item position-relative bg-light border-top border-5 border-primary rounded p-4 my-4">
+                        <div class="d-flex align-items-center justify-content-center position-absolute top-0 start-0 ms-5 translate-middle bg-primary rounded-circle" style="width: 45px; height: 45px; margin-top: -3px;">
+                            <i class="fa fa-quote-left text-white"></i>
+                        </div>
+                        <p class="mt-3">America ranks 3rd in food waste next to China and India</p>. Citizens in Europe & America waste 15 times more food than the average African citizen.
+                        <div class="d-flex align-items-center">
+                            <div class="ps-3">
+                                <h6 class="fw-bold mb-1">thebarbecuelab.com</h6>
+                            </div>
+                        </div>
+                    </div>
+  
+                </div>
+            </div>
+        </div> -->
+
+        <!-- <div class="container-xxl py-5">
+            <div class="container px-lg-5">
+                <div class="section-title position-relative text-center mx-auto mb-5 pb-4 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                    <h1 class="mb-3">Our Solution</h1>
+                    <p class="mb-1">Food Reborn recovers food that would be wasted from business partnerships 
+                        (schools, grocery stores, farmer's markets, home and commercial gardens, etc.) and repurposes it into delicious food to resell at a more affordable price to low-income communities.
+                    Additionally, we will rigorously follow all <a href="https://www.fda.gov/food/guidance-regulation-food-and-dietary-supplements/food-safety-modernization-act-fsma">food safety regulations</a> in order to protect our customers.</p> -->
+                
+
+      <div class="container-xxl py-5">
+          <div class="container px-lg-5">
+              <div class="section-title position-relative text-center mx-auto mb-5 pb-4 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                  <h1 class="mb-3">Our Team Members</h1>
+
+              </div>
+              <div class="row g-4">
+                  <div class="col-lg-4 col-md-6 wow fadeInUp justify-content-center" data-wow-delay="0.1s">
+                      <div class="team-item border-top border-5 border-primary rounded shadow overflow-hidden">
+                          <div class="text-center p-4">
+                              <!-- <img class="img-fluid rounded-circle mb-4" src="img/Haresh Muralidharan.jpg" alt=""> -->
+                              <h5 class="fw-bold mb-1">Haresh Muralidharan</h5>
+                              <small></small>
+                          </div>
+                          <div class="d-flex justify-content-center bg-primary p-3">
+                              <a class="btn btn-square text-primary bg-white m-1" href=""><i class="fab fa-facebook-f"></i></a>
+                              <a class="btn btn-square text-primary bg-white m-1" href=""><i class="fab fa-twitter"></i></a>
+                              <a class="btn btn-square text-primary bg-white m-1" href=""><i class="fab fa-instagram"></i></a>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                      <div class="team-item border-top border-5 border-primary rounded shadow overflow-hidden">
+                          <div class="text-center p-4">
+                              <!-- <img class="img-fluid rounded-circle mb-4" src="img/Caitlin Hall.jpg" alt=""> -->
+                              <h5 class="fw-bold mb-1">Rushil Surti</h5>
+                              <small></small>
+                          </div>
+                          <div class="d-flex justify-content-center bg-primary p-3">
+                              <a class="btn btn-square text-primary bg-white m-1" href=""><i class="fab fa-facebook-f"></i></a>
+                              <a class="btn btn-square text-primary bg-white m-1" href=""><i class="fab fa-twitter"></i></a>
+                              <a class="btn btn-square text-primary bg-white m-1" href=""><i class="fab fa-instagram"></i></a>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                      <div class="team-item border-top border-5 border-primary rounded shadow overflow-hidden">
+                          <div class="text-center p-4">
+                              <img class="img-fluid rounded-circle mb-4" src="img/Katelin Cyfers.jpg" alt="">
+                              <h5 class="fw-bold mb-1">Praneeth Otthi</h5>
+                              <small></small>
+                          </div>
+                          <div class="d-flex justify-content-center bg-primary p-3">
+                              <a class="btn btn-square text-primary bg-white m-1" href=""><i class="fab fa-facebook-f"></i></a>
+                              <a class="btn btn-square text-primary bg-white m-1" href=""><i class="fab fa-twitter"></i></a>
+                              <a class="btn btn-square text-primary bg-white m-1" href=""><i class="fab fa-instagram"></i></a>
+                          </div>
+                      </div>
+                  </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="team-item border-top border-5 border-primary rounded shadow overflow-hidden">
+                        <div class="text-center p-4">
+                            <!-- <img class="img-fluid rounded-circle mb-4" src="img/Caitlin Hall.jpg" alt=""> -->
+                            <h5 class="fw-bold mb-1">Joseph Widjaja</h5>
+                            <small></small>
+                        </div>
+                        <div class="d-flex justify-content-center bg-primary p-3">
+                            <a class="btn btn-square text-primary bg-white m-1" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-square text-primary bg-white m-1" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-square text-primary bg-white m-1" href=""><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+              </div>
+          </div>
+      </div>
+
+        
+
+<!-- SOURCES & LIBRARY LINKS -->
+  <!-- Base HTML from https://htmlcodex.com/ -->
+  
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='lib/wow/wow.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/easing/easing.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/waypoints/waypoints.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/counterup/counterup.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/owlcarousel/owl.carousel.min.js') }}"></script>
+
+    <!-- JAVASCRIPT -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+
+</html>
